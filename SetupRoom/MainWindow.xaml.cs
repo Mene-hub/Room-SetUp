@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -60,6 +61,13 @@ namespace SetupRoom
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             Static.exit(this);
+        }
+
+        private void Inizialized(object sender, EventArgs e)
+        {
+            this.Close();
+            this.Left = Screen.PrimaryScreen.Bounds.Width - this.Width;
+            this.Top = Screen.PrimaryScreen.Bounds.Height - this.Height;
         }
     }
 }

@@ -23,7 +23,7 @@ namespace SetupRoom
         System.Windows.Forms.ContextMenu cm = new System.Windows.Forms.ContextMenu();
         public App()
         {
-            nIcon.Icon = new Icon(@"../../icon/Room-SetUp.ico");
+            nIcon.Icon = new Icon(@"Room-SetUp.ico");
             nIcon.Visible = true;
             nIcon.MouseClick += NIcon_MouseClick;
 
@@ -83,8 +83,12 @@ namespace SetupRoom
 
         private async void findip() 
         {
-            Static.device = ((List<Device>)await DeviceLocator.DiscoverAsync())[0];
-            Static.device.Connect();
+            try
+            {
+                Static.device = ((List<Device>)await DeviceLocator.DiscoverAsync())[0];
+                Static.device.Connect();
+            }
+            catch (Exception e) { }
         }
 
     }

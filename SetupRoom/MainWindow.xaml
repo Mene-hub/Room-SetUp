@@ -15,7 +15,7 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
         Title="Room SetUp" Height="500" Width="300" Closing="on_Closing" ResizeMode="NoResize" WindowStyle="None" MouseDown="dragging">
 
-    <Grid Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="300" Height="500" Background="#FF131313">
+    <Grid Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="300" Height="500" Background="#FF131313" Initialized="Inizialized">
         <Label HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" Content="Room SetUp"/>
         <Button Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}" ToolTip="MaterialDesignFloatingActionMiniLightButton" VerticalAlignment="Top" Width="20" Height="20" Background="#FFFF4343" BorderBrush="#FFFF6060" HorizontalAlignment="Right" Margin="0,10,10,0" Click="closeWindow">
             <materialDesign:PackIcon Kind="Close" Height="20" Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" />
