@@ -16,20 +16,47 @@ namespace SetupRoom
         public static bool b = true;
         public static Device device;
 
+        public static async void findip()
+        {
+            try
+            {
+                device = ((List<Device>)await DeviceLocator.DiscoverAsync())[0];
+                device.Connect();
+            }
+            catch (Exception e)
+            {
+                System.Windows.MessageBox.Show("Nessuna lampadina trovata");
+            }
+        }
+
         public static void Studio()
         {
             Process.Start(@"OneNote for Windows 10.lnk");
             Process.Start(@"Spotify.lnk");
-            device.SetPower(true);
-            device.SetScene(Scene.FromColorTemperature(50, 100));
+
+            if (device == null)
+                findip();
+
+            try
+            {
+                device.SetPower(true);
+                device.SetScene(Scene.FromColorTemperature(50, 100));
+            }
+            catch (Exception e){}
         }
 
         public static void reset()
         {
-            device.SetPower(true);
-            device.SetBrightness(100);
-            device.SetColorTemperature(4500);
-            device.SetDefault();
+            if (device == null)
+                findip();
+
+            try
+            {
+                device.SetPower(true);
+                device.SetBrightness(100);
+                device.SetColorTemperature(4500);
+                device.SetDefault();
+            }catch (Exception e) { }
         }
 
         public static void exit(Window window)

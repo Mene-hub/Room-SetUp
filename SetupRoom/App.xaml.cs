@@ -27,7 +27,7 @@ namespace SetupRoom
             nIcon.Visible = true;
             nIcon.MouseClick += NIcon_MouseClick;
 
-            findip();
+            Static.findip();
             //device = new Device("192.168.0.5");
 
             System.Windows.Forms.MenuItem Mi = new System.Windows.Forms.MenuItem();
@@ -79,16 +79,6 @@ namespace SetupRoom
         private void Mi3_Click(object sender, EventArgs e)
         {
             Static.reset();
-        }
-
-        private async void findip() 
-        {
-            try
-            {
-                Static.device = ((List<Device>)await DeviceLocator.DiscoverAsync())[0];
-                Static.device.Connect();
-            }
-            catch (Exception e) { }
         }
 
     }
