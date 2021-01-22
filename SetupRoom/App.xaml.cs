@@ -42,12 +42,23 @@ namespace SetupRoom
             Mi3.Text = "Reset";
             Mi3.Click += Mi3_Click;
 
+            System.Windows.Forms.MenuItem Mi4 = new System.Windows.Forms.MenuItem();
+            Mi4.Text = "Gaming";
+            Mi4.Click += Mi4_Click;
 
+
+            cm.MenuItems.Add(Mi4);
             cm.MenuItems.Add(Mi2);
             cm.MenuItems.Add(Mi3);
             cm.MenuItems.Add(Mi);
             nIcon.ContextMenu = cm;
         }
+
+        private void Mi4_Click(object sender, EventArgs e)
+        {
+            Static.Gaming();
+        }
+
         private void NIcon_MouseClick(object sender, System.Windows.Forms.MouseEventArgs e)
         {
             if (e.Button == System.Windows.Forms.MouseButtons.Right)

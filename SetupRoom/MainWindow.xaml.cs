@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace SetupRoom
 {
@@ -27,6 +28,14 @@ namespace SetupRoom
         {
             InitializeComponent();
             b = true;
+            DispatcherTimer Timer = new DispatcherTimer();
+            Timer.Interval = TimeSpan.FromSeconds(2);
+            Timer.Tick += Timer_Tick;
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            Static.IsConnected();
         }
 
         public void on_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -68,6 +77,16 @@ namespace SetupRoom
             this.Close();
             this.Left = Screen.PrimaryScreen.Bounds.Width - this.Width;
             this.Top = Screen.PrimaryScreen.Bounds.Height - this.Height;
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            Static.Gaming();
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            Static.Music();
         }
     }
 }

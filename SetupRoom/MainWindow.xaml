@@ -17,15 +17,16 @@
 
     <Grid Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="300" Height="500" Background="#FF131313" Initialized="Inizialized">
         <Label HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" Content="Room SetUp"/>
-        <Button Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}" ToolTip="MaterialDesignFloatingActionMiniLightButton" VerticalAlignment="Top" Width="20" Height="20" Background="#FFFF4343" BorderBrush="#FFFF6060" HorizontalAlignment="Right" Margin="0,10,10,0" Click="closeWindow">
-            <materialDesign:PackIcon Kind="Close" Height="20" Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <Button Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}" ToolTip="MaterialDesignFloatingActionMiniLightButton" VerticalAlignment="Top" Width="20" Height="20" Background="#FFFF4343" BorderBrush="#FFB41F1F" HorizontalAlignment="Right" Margin="0,10,10,0" Click="closeWindow">
+            <materialDesign:PackIcon Kind="Close" Height="20" Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#DD360000" BorderThickness="0" />
         </Button>
 
-        <StackPanel Margin="0,50,0,0">
-            <Button HorizontalAlignment="Center" VerticalAlignment="Top" Width="150" Margin="0" Background="#FF2196F3" Click="Button_Click">Studio</Button>
+        <StackPanel Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button HorizontalAlignment="Center" VerticalAlignment="Top" Width="150" Margin="0" Background="#FF2196F3" Click="Button_Click_4">Music Mode</Button>
+            <Button HorizontalAlignment="Center" VerticalAlignment="Top" Width="150" Margin="0,40,0,0" Background="#FF2196F3" Click="Button_Click_3">Gaming</Button>
+            <Button HorizontalAlignment="Center" VerticalAlignment="Top" Width="150" Margin="0,40,0,0" Background="#FF2196F3" Click="Button_Click">Studio</Button>
             <Button HorizontalAlignment="Center" VerticalAlignment="Top" Width="150" Margin="0,40,0,0" Click="Button_Click_1">Reset</Button>
             <Button HorizontalAlignment="Center" VerticalAlignment="Top" Width="150" Margin="0,40,0,0" Click="Button_Click_2">Exit</Button>
-
         </StackPanel>
     </Grid>
 
